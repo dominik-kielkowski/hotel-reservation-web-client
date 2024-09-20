@@ -1,0 +1,36 @@
+<div class="hotel-list-container">
+  <h1>Available Hotels</h1>
+
+  <!-- Filter Component -->
+  <app-hotel-filter (filterChanged)="onFilterChange($event)"></app-hotel-filter>
+
+  <!-- Sorting Dropdown -->
+  <div class="sorting-container">
+    <label for="sortBy">Sort by: </label>
+    <select (change)="onSortChange(sortBy)" id="sortBy">
+      <option value="">Select Sorting</option>
+      <option value="name">Name</option>
+      <option value="rating">Rating</option>
+      <option value="price">Price</option>
+    </select>
+  </div>
+
+  <!-- List of Hotels -->
+  @for (hotel of hotels; track hotel.name){
+    <ul class="hotel-list">
+      <li class="hotel-item">
+        <h3>{{ hotel.name }}</h3>
+      </li>
+    </ul>
+  }
+
+
+  <!-- Pagination Component -->
+  <app-hotel-pagination
+    [totalItems]="totalItems"
+    [pageSize]="pageSize"
+    [currentPage]="pageNumber"
+    (pageChanged)="onPageChange($event)"
+    (pageSizeChanged)="onPageSizeChange($event)">
+  </app-hotel-pagination>
+</div>

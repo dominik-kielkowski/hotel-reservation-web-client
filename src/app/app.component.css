@@ -1,0 +1,24 @@
+/* Full-page container to center the content */
+.hotel-list-wrapper {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full viewport height */
+  background-color: #f4f4f4; /* Optional background color */
+}
+
+/* Styles for the actual content container */
+.hotel-list-container {
+  width: 90%; /* Makes it responsive */
+  max-width: 864px; /* Sets a max width */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Drop shadow */
+  padding: 20px; /* Optional padding */
+  background-color: white; /* Background color */
+}
+
+@media (max-width: 600px) {
+  .hotel-list-container {
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+}

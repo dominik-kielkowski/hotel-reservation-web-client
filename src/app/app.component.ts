@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { HotelListComponent } from './hotel-list/hotel-list.component'; // Import the standalone component
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.scss'],
+  standalone: true,
+  imports: [HotelListComponent]
 })
 export class AppComponent {
-  title = 'HotelReservationWebClient';
 }

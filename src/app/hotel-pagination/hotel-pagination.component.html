@@ -1,0 +1,25 @@
+<div class="pagination-container">
+  <button
+    [disabled]="currentPage === 1"
+    (click)="onPageChange(currentPage - 1)">
+    Previous
+  </button>
+
+  <span>Page {{ currentPage }} of {{ totalPages }}</span>
+
+  <button
+    [disabled]="currentPage === totalPages"
+    (click)="onPageChange(currentPage + 1)">
+    Next
+  </button>
+
+  <div class="page-size-selector">
+    <label for="pageSize">Items per page: </label>
+    <select (change)="onPageSizeChange(pageSize)" id="pageSize">
+      <option [value]="5">5</option>
+      <option [value]="10">10</option>
+      <option [value]="20">20</option>
+      <option [value]="50">50</option>
+    </select>
+  </div>
+</div>
