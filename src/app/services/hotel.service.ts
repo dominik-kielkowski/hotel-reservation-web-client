@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class HotelService {
-  private apiUrl = 'https://localhost:5001/api/hotel';  // Replace with your API URL
+  private apiUrl = 'https://hotel-reservation-api.azurewebsites.net/api/hotel';  // Replace with your API URL
 
   constructor(private http: HttpClient) {}
 

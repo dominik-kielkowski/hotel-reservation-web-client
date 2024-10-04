@@ -1,0 +1,11 @@
+<div class="dialog-overlay" (click)="onClose()">
+  <div class="dialog" (click)="$event.stopPropagation()">
+    <h2 class="dialog-title">Login</h2>
+    <div class="dialog-content">
+      <h1>Login form here.</h1>
+    </div>
+    <div class="dialog-actions">
+      <button (click)="onClose()">Close</button>
+    </div>
+  </div>
+</div>

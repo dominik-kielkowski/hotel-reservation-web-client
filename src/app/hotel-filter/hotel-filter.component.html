@@ -2,5 +2,7 @@
   <input
     type="text"
     placeholder="Search hotels..."
+    [(ngModel)]="filterValue"
+    (ngModelChange)="onFilterChange($event)"
   />
 </div>

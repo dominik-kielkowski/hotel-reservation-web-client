@@ -7,23 +7,22 @@
   <!-- Sorting Dropdown -->
   <div class="sorting-container">
     <label for="sortBy">Sort by: </label>
-    <select (change)="onSortChange(sortBy)" id="sortBy">
-      <option value="">Select Sorting</option>
+    <select [(ngModel)]="sortBy" (change)="onSortChange(sortBy)" id="sortBy">
       <option value="name">Name</option>
       <option value="rating">Rating</option>
       <option value="price">Price</option>
     </select>
   </div>
 
+
   <!-- List of Hotels -->
-  @for (hotel of hotels; track hotel.name){
+  @for (hotel of hotels; track hotel.id){
     <ul class="hotel-list">
       <li class="hotel-item">
-        <h3>{{ hotel.name }}</h3>
+        <a routerLink="/details">{{ hotel.name }}</a>
       </li>
     </ul>
   }
-
 
   <!-- Pagination Component -->
   <app-hotel-pagination

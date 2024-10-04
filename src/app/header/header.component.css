@@ -1,0 +1,76 @@
+/* Reset default margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Styling the header */
+.header {
+  background-color: #ffffff; /* White background for a clean look */
+  padding: 20px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+  z-index: 10; /* Ensure the header stays on top of other elements */
+  position: relative; /* Ensure z-index applies */
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo styling */
+.logo h1 {
+  color: #007BFF; /* Blue color for the logo */
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Navbar styling */
+.navbar ul {
+  list-style: none;
+  display: flex;
+}
+
+.navbar ul li {
+  margin-left: 20px;
+}
+
+/* Rounded button styling */
+.nav-btn {
+  padding: 10px 20px;
+  background-color: #007BFF; /* Blue background for buttons */
+  color: white; /* White text for contrast */
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 30px; /* Fully rounded corners */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  z-index: 5; /* Ensures buttons appear above other lower elements */
+  position: relative; /* Necessary to apply z-index */
+}
+
+/* Hover effects for buttons */
+.nav-btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Main content placeholder */
+section {
+  padding: 20px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 18px;
+  color: #555;
+}

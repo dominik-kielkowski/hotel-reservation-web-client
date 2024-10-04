@@ -2,21 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { HotelService } from '../services/hotel.service';
 import {HotelPaginationComponent} from "../hotel-pagination/hotel-pagination.component";
 import {HotelFilterComponent} from "../hotel-filter/hotel-filter.component";
+import {FormsModule} from "@angular/forms";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-hotel-list',
   templateUrl: './hotel-list.component.html',
   styleUrls: ['./hotel-list.component.scss'],
-  imports: [HotelPaginationComponent, HotelFilterComponent],
+  imports: [HotelPaginationComponent, HotelFilterComponent, FormsModule, RouterLink],
   standalone: true
 })
 export class HotelListComponent implements OnInit {
   hotels: any[] = [];
-  totalItems = 10;
-  pageSize = 10;
+  totalItems = 0;
+  pageSize = 5;
   pageNumber = 1;
   filter = '';
-  sortBy = '';
+  sortBy = 'name';
 
   constructor(private hotelService: HotelService) {}
 
@@ -28,7 +30,7 @@ export class HotelListComponent implements OnInit {
     this.hotelService.getHotels(this.sortBy, this.filter, this.pageNumber, this.pageSize).subscribe(
       (response) => {
         this.hotels = response;
-        this.totalItems = response.count;
+        this.totalItems = 50;
       },
       (error) => {
         console.error('Error fetching hotels', error);

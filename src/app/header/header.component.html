@@ -1,0 +1,22 @@
+<header class="header">
+  <div class="container">
+    <div class="logo">
+      <a routerLink="">Hotel Reservation</a>
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a class="nav-btn" (click)="openDialog('project-info')">Project Info</a></li>
+        <li><a class="nav-btn" (click)="openDialog('contact')">Contact Me</a></li>
+        <li><a class="nav-btn" (click)="openDialog('login')">Login</a></li>
+        <li><a class="nav-btn" (click)="openDialog('register')">Register</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<ng-container [ngSwitch]="activeDialog">
+  <app-project-info *ngSwitchCase="'project-info'" (closeDialog)="closeDialog()"></app-project-info>
+  <app-contact *ngSwitchCase="'contact'" (closeDialog)="closeDialog()"></app-contact>
+  <app-login *ngSwitchCase="'login'" (closeDialog)="closeDialog()"></app-login>
+  <app-register *ngSwitchCase="'register'" (closeDialog)="closeDialog()"></app-register>
+</ng-container>
