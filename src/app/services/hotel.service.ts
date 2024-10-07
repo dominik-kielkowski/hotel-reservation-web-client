@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { ConfigService } from './config.service'; // Import ConfigService
 
 @Injectable({
   providedIn: 'root'
 })
 export class HotelService {
-  private apiUrl = 'https://hotel-reservation-api.azurewebsites.net/api/hotel';  // Replace with your API URL
+  private apiUrl: string;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private configService: ConfigService) {
+    this.apiUrl = `${this.configService.getApiUrl()}/hotel`;
+  }
 
-  // Method to get a list of hotels with pagination and filtering
   getHotels(sortBy?: string, filter?: string, pageNumber: number = 1, pageSize: number = 10): Observable<any> {
     let params = new HttpParams()
       .set('pageNumber', pageNumber.toString())
