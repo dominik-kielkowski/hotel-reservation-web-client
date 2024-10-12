@@ -19,7 +19,12 @@
   @for (hotel of hotels; track hotel.id){
     <ul class="hotel-list">
       <li class="hotel-item">
-        <a routerLink="/details">{{ hotel.name }}</a>
+        <a routerLink="/details/{{ hotel.id }}">
+          <div class="hotel-info">
+            <h3>{{ hotel.name }}</h3>
+            <p>Rating: {{ hotel.rating }} | Price: ${{ hotel.price }}</p>
+          </div>
+        </a>
       </li>
     </ul>
   }

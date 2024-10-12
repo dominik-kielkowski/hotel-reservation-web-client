@@ -1,0 +1,110 @@
+/* Reset default margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Styling the header */
+.header {
+  background: linear-gradient(135deg, #ffffff, #f0f0f0); /* Soft gradient for a subtle effect */
+  padding: 20px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for a modern touch */
+  z-index: 10;
+  position: relative;
+}
+
+/* Container settings */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo styling */
+.logo a {
+  color: #007BFF; /* Blue color for logo */
+  font-size: 26px; /* Slightly larger font size */
+  font-weight: 700; /* Bolder for emphasis */
+  text-decoration: none;
+  letter-spacing: 1px; /* Adds spacing between characters for a polished look */
+  transition: color 0.3s ease; /* Smooth color transition */
+  cursor: pointer; /* Set cursor to pointer for clickable logo */
+}
+
+.logo a:hover {
+  color: #0056b3; /* Darker blue on hover */
+}
+
+/* Navbar styling */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px; /* Use gap for consistent spacing */
+}
+
+/* Rounded button styling */
+.nav-btn {
+  padding: 10px 25px;
+  background-color: #007BFF; /* Blue background for buttons */
+  color: white; /* White text for contrast */
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600; /* Semi-bold for button text */
+  border-radius: 25px; /* Rounded corners for modern feel */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow on the button */
+  cursor: pointer; /* Explicitly set the cursor to pointer */
+}
+
+/* Hover effects for buttons */
+.nav-btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-3px); /* Slight lift effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* More intense shadow on hover */
+}
+
+/* Ensure cursor changes to pointer when hovering over links or clickable elements */
+.nav-btn:hover {
+  cursor: pointer; /* Keep pointer cursor on hover */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column; /* Stack nav items vertically */
+    gap: 10px; /* Adjust gap for smaller screens */
+  }
+
+  .nav-btn {
+    width: 100%; /* Full width buttons for mobile */
+    text-align: center;
+  }
+
+  .logo a {
+    font-size: 22px; /* Slightly smaller logo on mobile */
+  }
+}
+
+/* Main content placeholder */
+section {
+  padding: 20px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 15px;
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+}
+
+p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+}

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HotelService } from '../services/hotel.service';
+import { HotelService } from '../../../core/services/hotel.service';
 import {HotelPaginationComponent} from "../hotel-pagination/hotel-pagination.component";
 import {HotelFilterComponent} from "../hotel-filter/hotel-filter.component";
 import {FormsModule} from "@angular/forms";

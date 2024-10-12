@@ -1,0 +1,107 @@
+.hotel-list-container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 30px auto; /* Adjusted margin for more breathing room */
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Title styling */
+.hotel-list-container h1 {
+  color: #333;
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Sorting container styling */
+.sorting-container {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  label {
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #555;
+  }
+
+  select {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+  }
+
+  select:focus {
+    border-color: #007BFF; /* Blue border on focus */
+    outline: none;
+  }
+}
+
+/* Hotel list styling */
+.hotel-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+/* Individual hotel item styling */
+.hotel-item {
+  background-color: #ffffff;
+  margin: 15px 0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Softer shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+/* Hover effect for hotel items */
+.hotel-item:hover {
+  transform: translateY(-5px); /* Slight lift effect */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* Stronger shadow on hover */
+}
+
+/* Link inside the hotel item */
+.hotel-item a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* Hotel info text */
+.hotel-info h3 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.hotel-info p {
+  font-size: 16px;
+  color: #777;
+  margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hotel-list-container {
+    width: 95%; /* Make the container wider for mobile */
+  }
+
+  .sorting-container {
+    flex-direction: column; /* Stack sorting controls vertically */
+    gap: 10px;
+  }
+
+  .hotel-info h3 {
+    font-size: 20px;
+  }
+
+  .hotel-info p {
+    font-size: 14px;
+  }
+}

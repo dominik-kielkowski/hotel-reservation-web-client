@@ -1,0 +1,83 @@
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7); /* Slightly darker overlay for better contrast */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+.dialog {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* More prominent shadow */
+  width: 420px; /* Set desired width */
+  max-width: 100%;
+  position: relative; /* For positioning close button */
+}
+
+.dialog-title {
+  margin: 0;
+  font-size: 24px;
+  text-align: center; /* Center title for better aesthetics */
+  color: #34495e; /* Darker title color */
+}
+
+.dialog-content {
+  margin: 20px 0;
+}
+
+.form-group {
+  margin-bottom: 15px; /* Space between form elements */
+}
+
+.form-group label {
+  display: block; /* Ensure labels are above inputs */
+  margin-bottom: 5px; /* Space between label and input */
+  font-weight: bold; /* Bold labels for emphasis */
+}
+
+.form-group input {
+  width: 100%; /* Full-width input */
+  padding: 10px; /* Padding for inputs */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 4px; /* Rounded corners */
+}
+
+.form-group input:focus {
+  border-color: #007bff; /* Highlight border on focus */
+  outline: none; /* Remove default outline */
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end; /* Align actions to the right */
+}
+
+.dialog-actions button {
+  background: #007bff; /* Primary button color */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px; /* Space between buttons */
+  transition: background 0.3s ease; /* Smooth transition */
+}
+
+.dialog-actions button:hover {
+  background: #0056b3; /* Darker shade on hover */
+}
+
+.btn-submit {
+  background: #28a745; /* Green color for the register button */
+}
+
+.btn-submit:hover {
+  background: #218838; /* Darker green on hover */
+}

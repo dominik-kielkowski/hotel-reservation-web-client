@@ -1,0 +1,27 @@
+<div class="dialog-overlay" (click)="onClose()">
+  <div class="dialog" (click)="$event.stopPropagation()">
+    <h2 class="dialog-title">Register</h2>
+    <div class="dialog-content">
+      <h1>Register form here.</h1>
+      <!-- Add registration form elements here -->
+      <form>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" required placeholder="Enter your username" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required placeholder="Enter your email" />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" required placeholder="Enter your password" />
+        </div>
+      </form>
+    </div>
+    <div class="dialog-actions">
+      <button (click)="onClose()">Close</button>
+      <button type="submit" class="btn-submit">Register</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+.filter-container {
+  margin: 20px 0;
+}
+
+input {
+  width: 100%;
+  padding: 12px; /* Increased padding for better touch targets */
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Slightly more rounded corners */
+  font-size: 16px; /* Increased font size for better readability */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for focus state */
+
+  /* Placeholder style */
+  &::placeholder {
+    color: #aaa; /* Lighter color for the placeholder */
+    opacity: 1; /* Ensure placeholder is fully opaque */
+  }
+
+  &:focus {
+    border-color: #007BFF; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Subtle shadow effect */
+    outline: none; /* Remove default outline */
+  }
+
+  /* Add hover effect */
+  &:hover {
+    border-color: #999; /* Darken border on hover */
+  }
+}

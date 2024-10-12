@@ -1,0 +1,61 @@
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px; /* Increased padding for better touch targets */
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Added transform for button effects */
+
+    &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    &:hover:not(:disabled) {
+      background-color: #0056b3;
+      transform: scale(1.05); /* Slightly enlarge on hover */
+    }
+
+    &:focus {
+      outline: none; /* Remove default outline */
+      box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.5); /* Add focus ring */
+    }
+  }
+
+  span {
+    font-size: 16px; /* Increased font size for readability */
+    margin: 0 15px;
+    font-weight: bold; /* Bold the page indicator text */
+    color: #333; /* Darker color for better contrast */
+  }
+
+  .page-size-selector {
+    margin-left: 20px;
+
+    label {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    select {
+      padding: 5px;
+      font-size: 14px;
+      border: 1px solid #ccc; /* Border for select box */
+      border-radius: 5px; /* Rounded corners */
+      transition: border-color 0.3s;
+
+      &:focus {
+        border-color: #007bff; /* Highlight border on focus */
+        outline: none; /* Remove default outline */
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+/* Full-page container to center the content */
+.hotel-list-wrapper {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full viewport height */
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Gradient background for a modern look */
+  padding: 20px; /* Optional padding to prevent content from touching the screen edges */
+}
+
+/* Styles for the actual content container */
+.hotel-list-container {
+  width: 90%; /* Makes it responsive */
+  max-width: 864px; /* Sets a max width */
+  border-radius: 20px; /* Softer rounded corners */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Softer and deeper shadow for a more modern feel */
+  padding: 30px; /* Increase padding for more breathing space */
+  background: white; /* Background color */
+  backdrop-filter: blur(10px); /* Optional: subtle background blur for a refined look */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effects */
+}
+
+/* Hover effect to lift the container for more interactivity */
+.hotel-list-container:hover {
+  transform: translateY(-10px); /* Subtle lift on hover */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25); /* Slightly more intense shadow on hover */
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 600px) {
+  .hotel-list-container {
+    padding: 15px; /* Adjust padding for smaller screens */
+  }
+}
