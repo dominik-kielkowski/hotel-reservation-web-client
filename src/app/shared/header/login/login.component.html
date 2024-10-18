@@ -1,11 +1,33 @@
 <div class="dialog-overlay" (click)="onClose()">
   <div class="dialog" (click)="$event.stopPropagation()">
     <h2 class="dialog-title">Login</h2>
-    <div class="dialog-content">
-      <h1>Login form here.</h1>
-    </div>
-    <div class="dialog-actions">
-      <button (click)="onClose()">Close</button>
-    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+      <div class="dialog-content">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            formControlName="password"
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+      </div>
+      <div class="dialog-actions">
+        <button type="button" (click)="onClose()" class="btn-cancel">Close</button>
+        <button type="submit" class="btn-submit">Login</button>
+      </div>
+    </form>
   </div>
 </div>

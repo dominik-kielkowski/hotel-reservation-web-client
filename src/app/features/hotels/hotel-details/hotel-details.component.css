@@ -5,7 +5,7 @@
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  font-family: 'Arial', sans-serif; /* Setting a base font */
+  font-family: 'Arial', sans-serif;
 }
 
 .hotel-header {
@@ -24,7 +24,7 @@
   font-size: 18px;
   color: #7f8c8d;
   margin-top: 10px;
-  line-height: 1.5; /* Improved line spacing */
+  line-height: 1.5;
 }
 
 .hotel-address,
@@ -51,12 +51,12 @@
   padding: 10px;
   border: 1px solid #ecf0f1;
   border-radius: 4px;
-  background-color: #fff; /* White background for room items */
-  transition: background-color 0.3s; /* Transition for hover effect */
+  background-color: #fff;
+  transition: background-color 0.3s;
 }
 
 .room-item:hover {
-  background-color: #f1f1f1; /* Light gray on hover */
+  background-color: #f1f1f1;
 }
 
 .room-item strong {
@@ -64,14 +64,30 @@
 }
 
 .price {
-  color: #e74c3c; /* Highlight price with red color */
-  font-weight: bold; /* Make price bold */
+  color: #e74c3c;
+  font-weight: bold;
 }
 
 ul {
   padding-left: 20px;
+  list-style-type: none; /* Ensure no bullets */
 }
 
 li {
   list-style: none;
+}
+
+.reserve-button {
+  margin-left: 10px;
+  padding: 8px 12px;
+  background-color: #3498db; /* Blue background */
+  color: white; /* White text */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.reserve-button:hover {
+  background-color: #2980b9; /* Darker blue on hover */
 }

@@ -1,29 +1,33 @@
 <div class="hotel-details">
   <div class="hotel-header">
-    <h1 class="hotel-name">Hotel Name</h1>
-    <p class="hotel-description">
-      Hotel description goes here. It provides detailed information about the hotel.
-    </p>
+    <h1 class="hotel-name">{{ hotel.name }}</h1>
+    <p class="hotel-description">{{ hotel.description }}</p>
   </div>
 
   <div class="hotel-address">
     <h2>Address</h2>
-    <p>Street: <span class="address-detail">123 Main St</span></p>
-    <p>City: <span class="address-detail">New York</span></p>
-    <p>Country: <span class="address-detail">USA</span></p>
-    <p>Zip Code: <span class="address-detail">12345</span></p>
+    <p>Street: <span class="address-detail">{{ hotel.street }} {{ hotel.buildingNumber }}</span></p>
+    <p>City: <span class="address-detail">{{ hotel.city }}</span></p>
+    <p>Country: <span class="address-detail">{{ hotel.country }}</span></p>
+    <p>Zip Code: <span class="address-detail">{{ hotel.postalCode }}</span></p>
   </div>
 
   <div class="hotel-rooms">
     <h2>Available Rooms</h2>
     <ul>
-      <li class="room-item">
-        <strong>Room 101:</strong> Double Bed, <span class="price">$100</span> per night
-      </li>
-      <li class="room-item">
-        <strong>Room 102:</strong> Single Bed, <span class="price">$80</span> per night
-      </li>
-      <!-- Add more rooms here as necessary -->
+      @for (room of hotel.rooms; track hotel.id){
+        <li class="room-item">
+          <strong>{{ room.name }}:</strong> {{ room.description }}, <span class="price">${{ room.price }}</span> per night
+          <button (click)="reserveRoom(room.id)" class="reserve-button">Reserve</button>
+        </li>
+      }
     </ul>
   </div>
+
+  <app-reservation-dialog
+    *ngIf="showReservationDialog"
+    [roomId]="selectedRoomId"
+    (closeDialog)="closeDialog()"
+    (reserve)="handleReservation($event)">
+  </app-reservation-dialog>
 </div>

@@ -1,19 +1,17 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HotelService {
-  private apiUrl: string = "";
+  private apiUrl: string = "https://localhost:5001/api"; // Your API URL
 
-  constructor(private http: HttpClient) {
-    this.apiUrl = `https://hotel-reservation-api.blacksea-5eb9e640.polandcentral.azurecontainerapps.io/api/Hotel`;
-  }
+  constructor(private http: HttpClient) {}
 
+  // Existing method
   getHotels(sortBy?: string, filter?: string, pageNumber: number = 1, pageSize: number = 10): Observable<any> {
-    console.log(this.apiUrl)
     let params = new HttpParams()
       .set('pageNumber', pageNumber.toString())
       .set('pageSize', pageSize.toString());
@@ -26,6 +24,24 @@ export class HotelService {
       params = params.set('filter', filter);
     }
 
-    return this.http.get<any>(this.apiUrl, { params });
+    return this.http.get<any>(`${this.apiUrl}/Hotel`, { params });
+  }
+
+  getHotelById(id: number): Observable<any> {
+    const url = `${this.apiUrl}/Hotel/${id}`;
+    return this.http.get<any>(url);
+  }
+
+  makeReservation(roomId: number, reservationData: any): Observable<any> {
+    const url = `${this.apiUrl}/Room/${roomId}/reservations`;
+
+    const token = localStorage.getItem('token');
+
+    let headers = new HttpHeaders();
+    if (token) {
+      headers = headers.set('Authorization', `Bearer ${token}`);
+    }
+
+    return this.http.post<any>(url, reservationData, { headers });
   }
 }

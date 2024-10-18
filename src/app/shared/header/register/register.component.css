@@ -4,80 +4,119 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.7); /* Slightly darker overlay for better contrast */
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000; /* Ensure it appears above other content */
+  z-index: 1000;
+  animation: fadeIn 0.3s;
 }
 
 .dialog {
   background: white;
-  padding: 20px;
+  padding: 30px; /* Increased padding for a more spacious look */
   border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* More prominent shadow */
-  width: 420px; /* Set desired width */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Softer shadow */
+  width: 420px;
   max-width: 100%;
-  position: relative; /* For positioning close button */
+  position: relative;
+  animation: slideIn 0.3s ease;
 }
 
 .dialog-title {
-  margin: 0;
-  font-size: 24px;
-  text-align: center; /* Center title for better aesthetics */
-  color: #34495e; /* Darker title color */
+  margin: 0 0 20px; /* Spacing below title */
+  font-size: 26px; /* Slightly larger font for title */
+  text-align: center;
+  color: #34495e;
 }
 
 .dialog-content {
-  margin: 20px 0;
+  margin-bottom: 20px; /* Space below form content */
 }
 
 .form-group {
-  margin-bottom: 15px; /* Space between form elements */
+  margin-bottom: 20px; /* Increased space between form elements */
 }
 
 .form-group label {
-  display: block; /* Ensure labels are above inputs */
-  margin-bottom: 5px; /* Space between label and input */
-  font-weight: bold; /* Bold labels for emphasis */
+  display: block;
+  margin-bottom: 8px; /* More space between label and input */
+  font-weight: bold;
 }
 
 .form-group input {
-  width: 100%; /* Full-width input */
-  padding: 10px; /* Padding for inputs */
-  border: 1px solid #ccc; /* Light gray border */
-  border-radius: 4px; /* Rounded corners */
+  width: 100%;
+  padding: 12px; /* Increased padding for a more comfortable input area */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s, box-shadow 0.3s; /* Added transition for box-shadow */
 }
 
 .form-group input:focus {
   border-color: #007bff; /* Highlight border on focus */
-  outline: none; /* Remove default outline */
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Subtle blue shadow on focus */
+}
+
+.error {
+  color: red;
+  font-size: 0.85em; /* Slightly larger font size for error messages */
+  margin-top: 5px;
 }
 
 .dialog-actions {
   display: flex;
-  justify-content: flex-end; /* Align actions to the right */
+  justify-content: flex-end;
+  margin-top: 10px; /* Spacing above action buttons */
 }
 
 .dialog-actions button {
-  background: #007bff; /* Primary button color */
-  color: white;
+  padding: 10px 20px; /* Added padding for buttons */
   border: none;
-  padding: 10px 15px;
   border-radius: 4px;
   cursor: pointer;
   margin-left: 10px; /* Space between buttons */
-  transition: background 0.3s ease; /* Smooth transition */
+  transition: background 0.3s ease, transform 0.2s ease; /* Added transition for button effects */
 }
 
-.dialog-actions button:hover {
-  background: #0056b3; /* Darker shade on hover */
+.btn-cancel {
+  background: #f44336; /* Red color for close button */
+  color: white;
+}
+
+.btn-cancel:hover {
+  background: #c62828; /* Darker red on hover */
+  transform: scale(1.05); /* Slight scaling effect */
 }
 
 .btn-submit {
-  background: #28a745; /* Green color for the register button */
+  background: #28a745; /* Green color for register button */
+  color: white;
 }
 
 .btn-submit:hover {
   background: #218838; /* Darker green on hover */
+  transform: scale(1.05); /* Slight scaling effect */
+}
+
+/* Animation for the overlay */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Animation for the dialog */
+@keyframes slideIn {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
