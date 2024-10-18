@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
 export class HotelService {
-  private apiUrl: string = "https://localhost:5001/api"; // Your API URL
+  private apiUrl: string = environment.apiUrl;
 
   constructor(private http: HttpClient) {}
 

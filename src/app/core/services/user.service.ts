@@ -3,12 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { RegisterDto } from "../../shared/header/register/register.component";
 import {LoginDto} from "../../shared/header/login/login.component";
+import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  private apiUrl = 'https://localhost:5001/api/Account'; // Adjust your API URL
+  private apiUrl: string = environment.apiUrl;
 
   constructor(private http: HttpClient) {}
 

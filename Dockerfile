@@ -3,7 +3,8 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
-RUN npm run build --prod
+ARG CONFIGURATION=development
+RUN npm run build --configuration=${CONFIGURATION}
 
 FROM nginx:latest
 
