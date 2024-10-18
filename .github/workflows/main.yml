@@ -28,7 +28,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: src/HotelReservationWebsite/Dockerfile  # Path to your Dockerfile
+          file: HotelReservationWebClient/Dockerfile
           push: true
           tags: |
             dominikkielkowski/hotel-reservation:latest
