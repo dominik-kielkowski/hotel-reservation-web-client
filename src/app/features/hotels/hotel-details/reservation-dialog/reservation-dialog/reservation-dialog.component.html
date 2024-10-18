@@ -1,0 +1,13 @@
+<div class="dialog">
+  <h2>Reserve Room</h2>
+  <form (ngSubmit)="submitReservation()" [formGroup]="reservationForm">
+    <label for="begin">Check-in Date:</label>
+    <input type="date" id="begin" formControlName="begin" required />
+
+    <label for="end">Check-out Date:</label>
+    <input type="date" id="end" formControlName="end" required />
+
+    <button type="submit">Reserve</button>
+    <button type="button" (click)="close()">Cancel</button>
+  </form>
+</div>
