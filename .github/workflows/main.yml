@@ -1,19 +1,20 @@
-name: Build and Push Docker Image
+name: Build and Push Docker Images
 
 on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
   workflow_dispatch:
+    inputs:
+      configuration:
+        description: 'Build configuration (e.g., development, production)'
+        required: true
+        default: 'development'
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - name: Check out the repository
+        uses: actions/checkout@v3
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -28,11 +29,9 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: src/HotelReservationWebsite/Dockerfile  # Path to your Dockerfile
+          file: Dockerfile
           push: true
           tags: |
-            dominikkielkowski/hotel-reservation:latest
-            dominikkielkowski/hotel-reservation:${{ github.sha }}
-
-      - name: Post job summary
-        run: echo "Docker image has been built and pushed to Docker Hub successfully!"
+            dominikkielkowski/hotel-reservation-web-client:${{ github.event.inputs.configuration }}
+          build-args:
+            CONFIGURATION: ${{ github.event.inputs.configuration }}
