@@ -3,9 +3,8 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
-ARG CONFIGURATION=development
+ARG CONFIGURATION
 RUN npm run build --configuration=${CONFIGURATION}
 
 FROM nginx:latest
-
-COPY --from=build /app/dist/hotel-reservation-web-client/browser/ /usr/share/nginx/html
+COPY --from=build /app/dist/hotel-reservation-web-client/ /usr/share/nginx/html
