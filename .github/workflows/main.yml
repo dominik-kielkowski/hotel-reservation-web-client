@@ -2,15 +2,13 @@ name: Build and Push Docker Images
 
 on:
   workflow_dispatch:
-    inputs:
-      configuration:
-        description: 'Build configuration (e.g., development, production)'
-        required: true
-        default: 'development'
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        configuration: [development, production]
 
     steps:
       - name: Check out the repository
@@ -32,6 +30,6 @@ jobs:
           file: Dockerfile
           push: true
           tags: |
-            dominikkielkowski/hotel-reservation-web-client:${{ github.event.inputs.configuration }}
-          build-args:
-            CONFIGURATION: ${{ github.event.inputs.configuration }}
+            dominikkielkowski/hotel-reservation-web-client:${{ matrix.configuration }}
+          build-args: 
+            CONFIGURATION: '${{ matrix.configuration }}'
